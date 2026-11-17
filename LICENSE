@@ -1,0 +1,43 @@
+MIT License
+
+Copyright (c) 2026 The VLA-Duo authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+Third-party notices
+
+- llama.cpp / ggml (https://github.com/ggml-org/llama.cpp): MIT License,
+  Copyright (c) 2023-2026 The ggml authors. patches/vla-duo.patch modifies
+  llama.cpp files, and the files under src/ are built inside a llama.cpp tree;
+  both remain under the llama.cpp MIT terms for the parts derived from it.
+  src/ggml/src/ggml-opencl/kernels/gemm_xmem_f16_f32_os8.cl is adapted from the
+  upstream llama.cpp ggml-opencl xmem GEMM kernels (MIT).
+- Not redistributed, obtained by the user under their own terms: the model
+  weights (lerobot/pi0_base, lerobot/pi05_base on Hugging Face), the PaliGemma
+  tokenizer, the Android NDK and the Qualcomm Hexagon SDK (inside the base
+  container image), and the upstream llama.cpp sources fetched by the build.
+- data/inputs/*.jpg: frame 0 of episode 0 (cameras cam_high, cam_left_wrist,
+  cam_right_wrist) of the public real-robot ALOHA dataset
+  physical-intelligence/aloha_pen_uncap_diverse on Hugging Face (revision
+  e82d8b40b8ac66c0b40273dd80a077dfc40b732e; a LeRobot conversion of the
+  aloha_pen_uncap_diverse subset of BiPlay, Dasari et al., ICRA 2025), licensed
+  under the Apache License, Version 2.0
+  (https://www.apache.org/licenses/LICENSE-2.0). Modification: the PNG frames
+  were decoded and re-encoded as baseline JPEG (quality 75) without metadata.

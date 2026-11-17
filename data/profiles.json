@@ -1,0 +1,171 @@
+{
+ "sd8elite/default": {
+  "soc": "sd8elite",
+  "kernel_config": "default",
+  "desc": "Snapdragon 8 Elite (OnePlus 13, Adreno 830, Hexagon v79), paper-era profile",
+  "provenance": {"models": "paper-era", "handoff_ms": "paper-era", "handoff_deep_ms": "paper-era", "w_npu": "paper-era (sd8elite pi0 HTP profile, used for both SoCs)", "opmat": "paper-era", "w_g_override": "paper-era (attention weight of the GPU profile)", "tau_ms": "nominal, paper", "vit_fixed_ms": "nominal, paper", "npu_patch_ms": "nominal, paper", "sh_gpu": "nominal, paper"},
+  "tau_ms": 1.0,
+  "vit_fixed_ms": 12.0,
+  "npu_patch_ms": 18.0,
+  "handoff_ms": 5.0,
+  "handoff_deep_ms": 4.5,
+  "models": {
+   "pi0": {
+    "solo": {
+     "gpu": {"vision": 512.8, "prefix": 1425.7, "fm": 388.7},
+     "npu": {"vision": 176.7, "prefix": 273.7, "fm": 112.4}
+    },
+    "deep": {"npu_stage47": 487.0, "gpu_stage47": 482.2, "T46": 530.9}
+   },
+   "pi05": {
+    "solo": {
+     "gpu": {"vision": 517.9, "prefix": 1636.2, "fm": 389.1},
+     "npu": {"vision": 180.1, "prefix": 323.3, "fm": 119.6}
+    },
+    "deep": {"npu_stage47": 540.3, "gpu_stage47": 500.6, "T46": 555.3}
+   }
+  },
+  "w_npu": {"vis_qkvo": 29.39, "vis_ff_up": 19.46, "vis_ff_dn": 24.8, "vis_attn": 40.09, "vis_ln": 17.66, "vis_gelu": 22.43, "pre_qkv": 11.94, "pre_o": 14.21, "pre_ff_up": 125.52, "pre_ff_dn": 76.71, "pre_attn": 25.49, "pre_geglu": 0.0, "pre_rmsn": 8.37, "pre_rope": 5.28, "fm_qkv": 9.65, "fm_o": 11.72, "fm_ff_up": 34.54, "fm_ff_dn": 14.85, "fm_attn": 24.43, "fm_geglu": 0.0},
+  "sh_gpu": {"LN1": 0.02, "QKV": 0.31, "ATTN": 0.1, "O": 0.1, "LN2": 0.02, "FFN": 0.45},
+  "w_g_override": {"vis_attn": 68.1},
+  "opmat": {
+   "set": "quick",
+   "rep_ms": 0,
+   "g": {
+    "vis_qkvo": {
+     "idle": 811,
+     "cells": {"vis_qkvo": 1.0, "vis_ff_up": 0.97, "vis_ff_dn": 1.04, "vis_attn": 1.25, "pre_qkv": 1.04, "pre_o": 1.1, "pre_ff_up": 1.24, "pre_ff_dn": 1.03, "pre_attn": 1.19, "fm_qkv": 1.28, "fm_o": 1.28, "fm_ff_up": 1.2, "fm_ff_dn": 1.24, "fm_attn": 1.26}
+    },
+    "vis_ff_up": {
+     "idle": 1422,
+     "cells": {"vis_qkvo": 0.96, "vis_ff_up": 0.76, "vis_ff_dn": 0.77, "vis_attn": 0.98, "pre_qkv": 0.88, "pre_o": 0.97, "pre_ff_up": 1.02, "pre_ff_dn": 0.92, "pre_attn": 0.95, "fm_qkv": 1.02, "fm_o": 1.04, "fm_ff_up": 1.02, "fm_ff_dn": 0.98, "fm_attn": 1.07}
+    },
+    "vis_ff_dn": {
+     "idle": 1297,
+     "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.86, "vis_ff_dn": 0.92, "vis_attn": 1.12, "pre_qkv": 0.93, "pre_o": 1.05, "pre_ff_up": 1.04, "pre_ff_dn": 0.99, "pre_attn": 1.04, "fm_qkv": 1.06, "fm_o": 1.02, "fm_ff_up": 1.08, "fm_ff_dn": 1.01, "fm_attn": 1.12}
+    },
+    "vis_attn": {
+     "idle": 31,
+     "cells": {"vis_qkvo": 1.0, "vis_ff_up": 0.94, "vis_ff_dn": 1.0, "vis_attn": 1.03, "pre_qkv": 1.0, "pre_o": 1.03, "pre_ff_up": 1.0, "pre_ff_dn": 1.0, "pre_attn": 1.0, "fm_qkv": 1.03, "fm_o": 1.03, "fm_ff_up": 1.03, "fm_ff_dn": 1.03, "fm_attn": 1.03}
+    }
+   },
+   "h": {
+    "vis_qkvo": {
+     "idle": 5044,
+     "cells": {"vis_qkvo": 0.93, "vis_ff_up": 0.88, "vis_ff_dn": 0.88, "vis_attn": 1.0, "vis_ln": 0.99, "vis_gelu": 0.77}
+    },
+    "vis_ff_up": {
+     "idle": 8763,
+     "cells": {"vis_qkvo": 0.94, "vis_ff_up": 0.92, "vis_ff_dn": 0.92, "vis_attn": 0.98, "vis_ln": 0.94, "vis_gelu": 0.76}
+    },
+    "vis_ff_dn": {
+     "idle": 6192,
+     "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.89, "vis_ff_dn": 0.9, "vis_attn": 0.97, "vis_ln": 0.96, "vis_gelu": 0.84}
+    },
+    "vis_attn": {
+     "idle": 639,
+     "cells": {"vis_qkvo": 0.93, "vis_ff_up": 0.91, "vis_ff_dn": 0.92, "vis_attn": 0.97, "vis_ln": 0.98, "vis_gelu": 0.81}
+    },
+    "vis_ln": {
+     "idle": 17,
+     "cells": {"vis_qkvo": 0.94, "vis_ff_up": 0.88, "vis_ff_dn": 0.88, "vis_attn": 1.0, "vis_ln": 0.94, "vis_gelu": 0.71}
+    },
+    "vis_gelu": {
+     "idle": 28,
+     "cells": {"vis_qkvo": 1.0, "vis_ff_up": 1.0, "vis_ff_dn": 1.0, "vis_attn": 1.0, "vis_ln": 1.0, "vis_gelu": 0.93}
+    },
+    "pre_qkv": {
+     "idle": 9930,
+     "cells": {"vis_qkvo": 0.96, "vis_ff_up": 0.94, "vis_ff_dn": 0.95, "vis_attn": 0.99, "vis_ln": 0.98, "vis_gelu": 0.86}
+    },
+    "pre_o": {
+     "idle": 6968,
+     "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.87, "vis_ff_dn": 0.89, "vis_attn": 0.97, "vis_ln": 0.95, "vis_gelu": 0.74}
+    },
+    "pre_ff_up": {
+     "idle": 14550,
+     "cells": {"vis_qkvo": 1.0, "vis_ff_up": 0.99, "vis_ff_dn": 0.99, "vis_attn": 1.0, "vis_ln": 1.0, "vis_gelu": 0.97}
+    },
+    "pre_ff_dn": {"idle": 12145, "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.88, "vis_ff_dn": 0.89, "vis_attn": 0.97}},
+    "pre_attn": {"idle": 2838, "cells": {"vis_qkvo": 0.99, "vis_ff_up": 0.97, "vis_ff_dn": 0.98, "vis_attn": 1.0}},
+    "fm_qkv": {"idle": 1288, "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.97, "vis_ff_dn": 0.96, "vis_attn": 1.0}},
+    "fm_o": {"idle": 1036, "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.96, "vis_ff_dn": 0.96, "vis_attn": 0.99}},
+    "fm_ff_up": {"idle": 2567, "cells": {"vis_qkvo": 0.99, "vis_ff_up": 0.96, "vis_ff_dn": 0.97, "vis_attn": 0.99}},
+    "fm_ff_dn": {"idle": 1594, "cells": {"vis_qkvo": 0.97, "vis_ff_up": 0.95, "vis_ff_dn": 0.96, "vis_attn": 1.0}},
+    "fm_attn": {"idle": 1206, "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.97, "vis_ff_dn": 0.97, "vis_attn": 1.0}}
+   }
+  },
+  "opmat_full": null
+ },
+ "sd8gen5/noxmem": {
+  "soc": "sd8gen5",
+  "kernel_config": "noxmem",
+  "desc": "Snapdragon 8 Elite Gen 5 (OnePlus 15, Adreno 840, Hexagon v81), paper-era profile, OpenCL SigLIP without the Adreno-840 xmem kernel",
+  "provenance": {"models": "paper-era", "handoff_ms": "paper-era", "handoff_deep_ms": "paper-era (assumed equal to sd8elite)", "w_npu": "paper-era (sd8elite pi0 HTP profile, used for both SoCs)", "opmat": "paper-era", "w_g_override": "paper-era (attention weight of the GPU profile)", "tau_ms": "nominal, paper", "vit_fixed_ms": "nominal, paper", "npu_patch_ms": "nominal, paper", "sh_gpu": "nominal, paper"},
+  "tau_ms": 1.0,
+  "vit_fixed_ms": 12.0,
+  "npu_patch_ms": 18.0,
+  "handoff_ms": 6.5,
+  "handoff_deep_ms": 4.5,
+  "models": {
+   "pi0": {
+    "solo": {
+     "gpu": {"vision": 429.1, "prefix": 1429.2, "fm": 357.1},
+     "npu": {"vision": 160.9, "prefix": 221.7, "fm": 98.9}
+    },
+    "deep": {"npu_stage47": 402.4, "gpu_stage47": 409.0, "T46": 462.7}
+   },
+   "pi05": {
+    "solo": {
+     "gpu": {"vision": 431.0, "prefix": 1648.7, "fm": 352.1},
+     "npu": {"vision": 160.1, "prefix": 259.4, "fm": 94.7}
+    },
+    "deep": {"npu_stage47": 448.2, "gpu_stage47": 436.4, "T46": 494.9}
+   }
+  },
+  "w_npu": {"vis_qkvo": 29.39, "vis_ff_up": 19.46, "vis_ff_dn": 24.8, "vis_attn": 40.09, "vis_ln": 17.66, "vis_gelu": 22.43, "pre_qkv": 11.94, "pre_o": 14.21, "pre_ff_up": 125.52, "pre_ff_dn": 76.71, "pre_attn": 25.49, "pre_geglu": 0.0, "pre_rmsn": 8.37, "pre_rope": 5.28, "fm_qkv": 9.65, "fm_o": 11.72, "fm_ff_up": 34.54, "fm_ff_dn": 14.85, "fm_attn": 24.43, "fm_geglu": 0.0},
+  "sh_gpu": {"LN1": 0.02, "QKV": 0.31, "ATTN": 0.1, "O": 0.1, "LN2": 0.02, "FFN": 0.45},
+  "w_g_override": {"vis_attn": 68.1},
+  "opmat": {
+   "set": "quick",
+   "rep_ms": 8,
+   "g": {
+    "vis_qkvo": {
+     "idle": 1535,
+     "cells": {"vis_qkvo": 0.68, "vis_ff_up": 0.69, "vis_ff_dn": 0.73, "vis_attn": 0.84, "pre_qkv": 0.59, "pre_o": 0.67, "pre_ff_up": 0.69, "pre_ff_dn": 0.65, "pre_attn": 0.69, "fm_qkv": 0.67, "fm_o": 0.69, "fm_ff_up": 0.63, "fm_ff_dn": 0.79, "fm_attn": 0.84}
+    },
+    "vis_ff_up": {
+     "idle": 2118,
+     "cells": {"vis_qkvo": 0.55, "vis_ff_up": 0.55, "vis_ff_dn": 0.49, "vis_attn": 0.91, "pre_qkv": 0.6, "pre_o": 0.75, "pre_ff_up": 0.93, "pre_ff_dn": 0.69, "pre_attn": 0.8, "fm_qkv": 0.73, "fm_o": 0.74, "fm_ff_up": 0.61, "fm_ff_dn": 0.76, "fm_attn": 0.9}
+    },
+    "vis_ff_dn": {
+     "idle": 1570,
+     "cells": {"vis_qkvo": 0.65, "vis_ff_up": 0.68, "vis_ff_dn": 0.69, "vis_attn": 0.92, "pre_qkv": 0.73, "pre_o": 0.84, "pre_ff_up": 0.92, "pre_ff_dn": 0.92, "pre_attn": 1.04, "fm_qkv": 0.82, "fm_o": 0.91, "fm_ff_up": 0.83, "fm_ff_dn": 0.88, "fm_attn": 0.93}
+    },
+    "vis_attn": {
+     "idle": 33,
+     "cells": {"vis_qkvo": 0.97, "vis_ff_up": 0.94, "vis_ff_dn": 0.94, "vis_attn": 0.97, "pre_qkv": 0.88, "pre_o": 1.0, "pre_ff_up": 0.97, "pre_ff_dn": 0.97, "pre_attn": 0.97, "fm_qkv": 0.97, "fm_o": 1.0, "fm_ff_up": 0.97, "fm_ff_dn": 0.97, "fm_attn": 1.0}
+    }
+   },
+   "h": {
+    "vis_qkvo": {"idle": 8290, "cells": {"vis_qkvo": 0.9, "vis_ff_up": 0.88, "vis_ff_dn": 0.89, "vis_attn": 0.96}},
+    "vis_ff_up": {"idle": 11049, "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.88, "vis_ff_dn": 0.9, "vis_attn": 0.98}},
+    "vis_ff_dn": {"idle": 7695, "cells": {"vis_qkvo": 0.95, "vis_ff_up": 0.92, "vis_ff_dn": 0.92, "vis_attn": 0.95}},
+    "vis_attn": {"idle": 630, "cells": {"vis_qkvo": 1.01, "vis_ff_up": 0.99, "vis_ff_dn": 1.0, "vis_attn": 1.0}},
+    "vis_ln": {"idle": 38, "cells": {"vis_qkvo": 0.87, "vis_ff_up": 0.87, "vis_ff_dn": 0.79, "vis_attn": 0.84}},
+    "vis_gelu": {"idle": 41, "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.95, "vis_ff_dn": 0.93, "vis_attn": 0.9}},
+    "pre_qkv": {"idle": 16112, "cells": {"vis_qkvo": 0.91, "vis_ff_up": 0.9, "vis_ff_dn": 0.84, "vis_attn": 0.9}},
+    "pre_o": {"idle": 10106, "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.86, "vis_ff_dn": 0.87, "vis_attn": 0.99}},
+    "pre_ff_up": {"idle": 13969, "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.86, "vis_ff_dn": 0.85, "vis_attn": 0.84}},
+    "pre_ff_dn": {"idle": 15253, "cells": {"vis_qkvo": 0.92, "vis_ff_up": 0.88, "vis_ff_dn": 0.86, "vis_attn": 0.87}},
+    "pre_attn": {"idle": 3450, "cells": {"vis_qkvo": 0.98, "vis_ff_up": 0.97, "vis_ff_dn": 0.97, "vis_attn": 0.98}},
+    "fm_qkv": {"idle": 3270, "cells": {"vis_qkvo": 0.93, "vis_ff_up": 0.9, "vis_ff_dn": 0.91, "vis_attn": 0.99}},
+    "fm_o": {"idle": 2687, "cells": {"vis_qkvo": 0.94, "vis_ff_up": 0.92, "vis_ff_dn": 0.93, "vis_attn": 0.98}},
+    "fm_ff_up": {"idle": 4213, "cells": {"vis_qkvo": 0.96, "vis_ff_up": 0.95, "vis_ff_dn": 0.96, "vis_attn": 0.98}},
+    "fm_ff_dn": {"idle": 3024, "cells": {"vis_qkvo": 0.93, "vis_ff_up": 0.89, "vis_ff_dn": 0.91, "vis_attn": 0.97}},
+    "fm_attn": {"idle": 2781, "cells": {"vis_qkvo": 0.94, "vis_ff_up": 0.92, "vis_ff_dn": 0.93, "vis_attn": 0.96}}
+   }
+  },
+  "opmat_full": null
+ }
+}

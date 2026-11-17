@@ -1,0 +1,51 @@
+# VLA-Duo model sets built by tools/gguf_tools.py prepare. Paths are relative to the models directory:
+#   cd <models> && md5sum -c <release>/data/models.md5   (add --ignore-missing after --heads hf16 or --heads q4)
+# 16-bit action heads (default, --heads hf16|both)
+efe37dca59cd0472e0c504383e7dd591  sets/pi0-npu/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-npu/pi0-gemma-2b.gguf
+f40f46ebd8954b5f9c736c3a45cb3f60  sets/pi0-npu/pi0-gemma-2b-fused.gguf
+d44c4295912c5f873e470f1cc99a7cad  sets/pi0-npu/pi0-action-expert.gguf
+efe37dca59cd0472e0c504383e7dd591  sets/pi0-gpu/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-gpu/pi0-gemma-2b.gguf
+02bec6c157a5b7c70fd8b649475a9fba  sets/pi0-gpu/pi0-gemma-2b-fused.gguf
+f759e58ba3344b8e6ba3b38c2fe935cb  sets/pi0-gpu/pi0-action-expert.gguf
+59189e0d24844c3e6be63239831d233f  sets/pi0-stock/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-stock/pi0-gemma-2b.gguf
+02bec6c157a5b7c70fd8b649475a9fba  sets/pi0-stock/pi0-gemma-2b-fused.gguf
+f759e58ba3344b8e6ba3b38c2fe935cb  sets/pi0-stock/pi0-action-expert.gguf
+f38a7b3d9287afc213d0f0345f06a600  sets/pi05-npu/pi0-mmproj.gguf
+0ffc8c3ae906a5ca346b71a31ec31351  sets/pi05-npu/pi0-gemma-2b.gguf
+cf188d08dd2b5afd68d3b7fa1fd80acd  sets/pi05-npu/pi0-gemma-2b-fused.gguf
+3b58959521580ba0c0bc631a99da2d1c  sets/pi05-npu/pi0-action-expert.gguf
+f38a7b3d9287afc213d0f0345f06a600  sets/pi05-gpu/pi0-mmproj.gguf
+0ffc8c3ae906a5ca346b71a31ec31351  sets/pi05-gpu/pi0-gemma-2b.gguf
+3f29eec574691e77166266f86c9ee35e  sets/pi05-gpu/pi0-gemma-2b-fused.gguf
+b9cfe0e81275e00247608827a85324d6  sets/pi05-gpu/pi0-action-expert.gguf
+# Q4_0 action heads (--heads q4|both): the files that ran on the phones
+efe37dca59cd0472e0c504383e7dd591  sets/pi0-npu-q4h/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-npu-q4h/pi0-gemma-2b.gguf
+f40f46ebd8954b5f9c736c3a45cb3f60  sets/pi0-npu-q4h/pi0-gemma-2b-fused.gguf
+1f9f3cad827075955cbb77daa12a05d4  sets/pi0-npu-q4h/pi0-action-expert.gguf
+efe37dca59cd0472e0c504383e7dd591  sets/pi0-gpu-q4h/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-gpu-q4h/pi0-gemma-2b.gguf
+02bec6c157a5b7c70fd8b649475a9fba  sets/pi0-gpu-q4h/pi0-gemma-2b-fused.gguf
+e4f858c1836d0c0d9fdb495ccb1bdabe  sets/pi0-gpu-q4h/pi0-action-expert.gguf
+59189e0d24844c3e6be63239831d233f  sets/pi0-stock-q4h/pi0-mmproj.gguf
+24754156775fda72a5aebc2b5ddd6a8b  sets/pi0-stock-q4h/pi0-gemma-2b.gguf
+02bec6c157a5b7c70fd8b649475a9fba  sets/pi0-stock-q4h/pi0-gemma-2b-fused.gguf
+e4f858c1836d0c0d9fdb495ccb1bdabe  sets/pi0-stock-q4h/pi0-action-expert.gguf
+f38a7b3d9287afc213d0f0345f06a600  sets/pi05-npu-q4h/pi0-mmproj.gguf
+0ffc8c3ae906a5ca346b71a31ec31351  sets/pi05-npu-q4h/pi0-gemma-2b.gguf
+cf188d08dd2b5afd68d3b7fa1fd80acd  sets/pi05-npu-q4h/pi0-gemma-2b-fused.gguf
+8d599e0bc450f0cd8c4d5e6d25f0fe55  sets/pi05-npu-q4h/pi0-action-expert.gguf
+f38a7b3d9287afc213d0f0345f06a600  sets/pi05-gpu-q4h/pi0-mmproj.gguf
+0ffc8c3ae906a5ca346b71a31ec31351  sets/pi05-gpu-q4h/pi0-gemma-2b.gguf
+3f29eec574691e77166266f86c9ee35e  sets/pi05-gpu-q4h/pi0-gemma-2b-fused.gguf
+42a2f81988df1e09079f72d17af759ea  sets/pi05-gpu-q4h/pi0-action-expert.gguf
+# diagnostics: converter outputs, to locate the first stage that differs
+# c3d961b599e50d98a950903bfc4e6c08  f16/pi0/pi0-action-expert.gguf
+# 64522f8841dc49cf0e6706dc12d86f6d  f16/pi0/pi0-gemma-2b.gguf
+# 59189e0d24844c3e6be63239831d233f  f16/pi0/pi0-mmproj.gguf
+# 1157d7115bb961e971ecae5de19d6003  f16/pi05/pi05-mmproj.gguf
+# 4449e8d6c2f2a03abfc1a01588afd8e0  f16/pi05/pi05-action-expert.gguf
+# e8d24ca6b1dc29b3e8765f08d12855c1  f16/pi05/pi05-gemma-2b.gguf
